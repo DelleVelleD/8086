@@ -27,7 +27,14 @@ command_list = {
 		.name = "build",
 		.out = "*compilation*", .footer_panel = true, .save_dirty_files = true, .cursor_at_end = true,
 		.cmd = {
-			{ "build.bat", .os = "win" },
+			{ "tcc.exe 8086.c -o8086.exe", .os = "win" },
+		},
+	},
+	{
+		.name = "run",
+		.out = "*compilation*", .footer_panel = true, .save_dirty_files = true, .cursor_at_end = true,
+		.cmd = {
+			{ "tcc.exe 8086.c -run", .os = "win" },
 		},
 	},
 	{
