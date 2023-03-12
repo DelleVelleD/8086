@@ -1,0 +1,12 @@
+#extensions
+*.exe
+*.rdbg
+*.tmp
+*.ctm
+
+#folders
+.vs/
+.vscode/
+build/
+
+#specific files
