@@ -77,18 +77,18 @@ int main(int args_count, char** args){
 			
 			byte = fgetc(file);
 			if(byte == EOF) return -1;
-			instruction[2] = (unsigned char)byte;
+			instruction[1] = (unsigned char)byte;
 			
 			if(w){
 				byte = fgetc(file);
 				if(byte == EOF) return -1;
-				instruction[3] = (unsigned char)byte;
+				instruction[2] = (unsigned char)byte;
 				
-				unsigned short word = *(unsigned short*)(instruction+2);
+				unsigned short word = *(unsigned short*)(instruction+1);
 				
 				printf("mov %s, %u\n", reg_strings[2*reg + 1], (unsigned int)word);
 			}else{
-				printf("mov %s, %u\n", reg_strings[2*reg + 0], (unsigned int)instruction[2]);
+				printf("mov %s, %u\n", reg_strings[2*reg + 0], (unsigned int)instruction[1]);
 			}
 			continue;
 		}
